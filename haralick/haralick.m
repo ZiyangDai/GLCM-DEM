@@ -13,7 +13,7 @@ function [ F ] = haralick( glcm )
 % MISSING:   f14  [1]
 
 %% ALLOCATION
-S=size(glcm,1);  %返回行数 
+S=size(glcm,1);  %路碌禄脴脨脨脢媒 
 
 f_2=zeros(S);
 f_3=zeros(S);
