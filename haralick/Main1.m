@@ -1,14 +1,14 @@
  
- %I = imread('E:\\2. 科研资料专区\\数据\\cy9.tif'); 
+ %I = imread('E:\\2. 绉戠爺璧勬枡涓撳尯\\鏁版嵁\\cy9.tif'); 
  I = imread('before_yanan_hs1.tif'); 
-  NumLevels=16;  %设置量化级数
+  NumLevels=16;  %璁剧疆閲忓寲绾ф暟
   
   [M,N,O] = size(I);
   minValue=10000;
   maxValue=0;
   nodataValue=I(1,1);
  
-  % 获取矩阵的最大最小值，这里考虑了Nodata
+  % 鑾峰彇鐭╅樀鐨勬渶澶ф渶灏忓�硷紝杩欓噷鑰冭檻浜哊odata
   for m=1:M
       for n=1:N
         if(I(m,n) ~= nodataValue)
@@ -22,7 +22,7 @@
       end
   end   
 
-%glcm是包含了Nodata统计信息，glcmCheck不包含Nodata统计信息
- [glcm,SI] = graycomatrix1(I,'NumLevels',NumLevels,'GrayLimits',[minValue  maxValue],'Offset',[0 3],'Symmetric',true);  %生成共生矩阵
+%glcm鏄寘鍚簡Nodata缁熻淇℃伅锛実lcmCheck涓嶅寘鍚玁odata缁熻淇℃伅
+ [glcm,SI] = graycomatrix1(I,'NumLevels',NumLevels,'GrayLimits',[minValue  maxValue],'Offset',[0 3],'Symmetric',true);  %鐢熸垚鍏辩敓鐭╅樀
  glcmCheck=glcm(2:NumLevels+1,2:NumLevels+1);
        
